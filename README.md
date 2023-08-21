@@ -28,27 +28,27 @@ Before you begin, make sure you have the following installed:
 1. Clone this repository:
 
 ```bash
-   git clone https://github.com/ManiYaswanth/Assessment.git
+git clone https://github.com/ManiYaswanth/Assessment.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-    cd app/
+cd app/
 ```
 3. Install dependencies:
 
 ```bash
-    pip3 install -r requirements.txt
-    Configure the database connection in /models/db_config.py.
+pip3 install -r requirements.txt
 ```
+Configure the database connection in /models/db_config.py.
+
 4. Run the application:
 
 ```bash
-    flask --app main run
-    The application will be accessible at http://localhost:5000
+flask --app main run
 ```
-
+The application will be accessible at http://localhost:5000
 ## Usage
 Use API endpoints to manage tracking plans and events.
 Create, update, and retrieve tracking plans and events.
@@ -58,12 +58,13 @@ Associate tracking plans with events for effective tracking.
 The database structure includes tables for tracking plans, events, and event-tracking plan associations.
 
 ## API Endpoints
-POST /tracking-plans - Create a new tracking plan.
-GET /tracking-plans - Get a list of all tracking plans.
-GET /tracking-plans/<tracking_plan_name> - Get details of a specific tracking plan.
-PUT /tracking-plans/<tracking_plan_name> - Update a tracking plan.
-POST /events - Create a new event.
-PUT /events/<event_name> - Update an event.
+- POST /tracking-plans - Create a new tracking plan.
+- GET /tracking-plans - Get a list of all tracking plans.
+- GET /tracking-plans/<tracking_plan_name> - Get details of a specific tracking plan.
+- PUT /tracking-plans/<tracking_plan_name> - Update a tracking plan.
+- POST /events - Create a new event.
+- GET /event/<event_name> - Get details of a specific event
+- PUT /events/<event_name> - Update an event.
 
 ## Contribute
 Contributions are welcome! Feel free to open issues and pull requests.
