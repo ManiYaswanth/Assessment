@@ -1,16 +1,69 @@
+# Tracking Plan Management System
+
 # Introduction 
-RudderStack SDE2 assesment.
-Rudderstack allows customers to send events from various sources like HTTP, Mixpanel etc to other destinations like BQ, Postgres etc. In order for Rudderstack to provide data quality control to the customers, it has introduced a concept of Tracking Plan. This project is about monitoring the Tracking plan and events coming in and act on non-compliant data.
+This project is a Tracking Plan Management System built using Python and Flask. It allows you to manage tracking plans and associated events for your application.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Overview
+The Tracking Plan Management System is designed to help you create, update, and manage tracking plans and events for your application. It provides API endpoints and User Interface to interact with the system and perform various actions related to tracking plans and events.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
+- Create and manage tracking plans with display name and description.
+- Define events with name, description, and associated rules.
+- Associate tracking plans with events and vice versa.
+- Retrieve tracking plans and their associated events.
+- Update tracking plans and events.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Getting Started
+
+### Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- Python
+- Flask
+- A database system (SQLite, PostgreSQL, etc.)
+
+### Installation
+
+1. Clone this repository:
+
+```bash
+   git clone https://github.com/ManiYaswanth/Assessment.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+    cd app/
+```
+3. Install dependencies:
+
+```bash
+    pip3 install -r requirements.txt
+    Configure the database connection in /models/db_config.py.
+```
+4. Run the application:
+
+```bash
+    flask --app main run
+    The application will be accessible at http://localhost:5000
+```
+
+## Usage
+Use API endpoints to manage tracking plans and events.
+Create, update, and retrieve tracking plans and events.
+Associate tracking plans with events for effective tracking.
+
+## Database Structure
+The database structure includes tables for tracking plans, events, and event-tracking plan associations.
+
+## API Endpoints
+POST /tracking-plans - Create a new tracking plan.
+GET /tracking-plans - Get a list of all tracking plans.
+GET /tracking-plans/<tracking_plan_name> - Get details of a specific tracking plan.
+PUT /tracking-plans/<tracking_plan_name> - Update a tracking plan.
+POST /events - Create a new event.
+PUT /events/<event_name> - Update an event.
+
+## Contribute
+Contributions are welcome! Feel free to open issues and pull requests.
