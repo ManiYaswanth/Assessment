@@ -69,6 +69,7 @@ The database structure includes tables for tracking plans, events, and event-tra
 - PUT /events/<event_name> - Update an event.
 
 payload for "/tracking_plan" endpoints - 
+```JSON
 { 
 	"tracking_plan": {
         "display_name": "Tracking Plan name",
@@ -78,23 +79,25 @@ payload for "/tracking_plan" endpoints -
                     "name": "event name",
                     "description": "event description",
                     "rules": {
-                        / JSON SCHEMA /
+                        { JSON SCHEMA }
                 }
               }
             ]
         }
     }
 }
+```
 
 payload for "/event" endpoints - 
+```JSON 
 {
     "name": "Order stopped",
     "description": "stopping the order",
     "rules": {
-        / JSON SCHEMA /
+        { JSON SCHEMA }
     }
 }
-
+```
 ## Note
 db table definitions is written in app/models/db_models.py which is never used, instead a mimic of db is created using python data structures and stored in memory while the application runs - refer app/models/db_mock.py
 
