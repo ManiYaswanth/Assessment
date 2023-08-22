@@ -91,8 +91,8 @@ payload for "/tracking_plan" endpoints -
 payload for "/event" endpoints - 
 ```JSON 
 {
-    "name": "Order stopped",
-    "description": "stopping the order",
+    "name": "Event name",
+    "description": "Event description",
     "rules": {
         { JSON SCHEMA }
     }
