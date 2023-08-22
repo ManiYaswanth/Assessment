@@ -55,7 +55,7 @@ def fetch_tracking_plan(tracking_plan_name):
 @mod.route('/tracking_plans/<tracking_plan_name>', methods=['PUT'])
 def modify_tracking_plan(tracking_plan_name):
     data = request.json
-    updated_plan = api_ops.update_tracking_plan(tracking_plan_name, data["display_name"], data["events"])
+    updated_plan = api_ops.update_tracking_plan(tracking_plan_name, data["tracking_plan"].get("display_name", ""), data["tracking_plan"]["rules"].get("events", []))
     if not updated_plan:
         return "tracking plan doesn't exist", 404
     return jsonify(message='Tracking plan updated successfully')

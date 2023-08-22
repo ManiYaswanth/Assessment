@@ -1,3 +1,8 @@
+'''
+    This is the actual db tables required for this project, but never used in this project. It was never hosted or created.
+    This uses sqlAlchemy(ORM) and shows the many many relationship between two tables.
+'''
+
 from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship

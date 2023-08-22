@@ -25,6 +25,7 @@ def set_event(event):
         Create and Insert event into db
     '''
     EVENTS[event["name"]] = {"name": event["name"], "description": event["description"], "rules": event["rules"]}
+    print(f'{EVENTS = }')
     return event["name"]
 
 
@@ -97,10 +98,6 @@ def update_tracking_plan(tracking_plan_name, display_name, events):
     '''
     previous_events = []
     is_plan_present = False
-    is_create_event = False
-    for event in events:
-        if not EVENTS[event["name"]]:
-            set_event(event)
     for id in TRACKING_PLAN:
         if TRACKING_PLAN[id]["display_name"] == tracking_plan_name:
             is_plan_present = True
@@ -114,10 +111,9 @@ def update_tracking_plan(tracking_plan_name, display_name, events):
                     EVENT_TRACKING_MAP[event].remove(id)   # detach tracking plan from previous events
 
             for event in events:
-                if not is_create_event:
+                if not EVENTS.get(event["name"]):
                     set_event(event)
-                    is_create_event = True
-                if id not in EVENT_TRACKING_MAP[event["name"]]:
+                    EVENT_TRACKING_MAP[event["name"]] = []
+                if EVENT_TRACKING_MAP.get(event["name"]) is not None and id not in EVENT_TRACKING_MAP.get(event["name"]):
                     EVENT_TRACKING_MAP[event["name"]].append(id)    # attach tracking plan to even
-
     return is_plan_present

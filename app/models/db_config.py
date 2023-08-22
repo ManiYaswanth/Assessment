@@ -1,3 +1,7 @@
+'''
+    This postgre server is never hosted or created. Just an example config to use in realtime projects.
+'''
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
